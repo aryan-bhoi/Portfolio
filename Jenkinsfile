@@ -4,21 +4,19 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Clean checkout to avoid old repo issues
-                deleteDir()
                 git branch: 'main', url: 'https://github.com/aryan-bhoi/Portfolio.git'
             }
         }
 
         stage('Build') {
             steps {
-                echo "Simulate build process..."
+                echo "Simulating build..."
             }
         }
 
         stage('Deploy') {
             steps {
-                echo "Simulate deployment process..."
+                echo "Simulating deployment..."
             }
         }
     }

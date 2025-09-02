@@ -1,26 +1,24 @@
 pipeline {
     agent any
 
-    environment {
-        IMAGE_NAME = "portfolio-app"
-    }
-
     stages {
         stage('Checkout') {
             steps {
+                // Clean checkout to avoid old repo issues
+                deleteDir()
                 git branch: 'main', url: 'https://github.com/aryan-bhoi/Portfolio.git'
             }
         }
 
-        stage('Build Docker Image') {
+        stage('Build') {
             steps {
-                echo "Built Docker Image"
+                echo "Simulate build process..."
             }
         }
 
-        stage('Run Docker Container') {
+        stage('Deploy') {
             steps {
-                echo "Docker container running"
+                echo "Simulate deployment process..."
             }
         }
     }
